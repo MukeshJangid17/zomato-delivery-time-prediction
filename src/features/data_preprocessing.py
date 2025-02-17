@@ -27,12 +27,13 @@ nominal_cat_cols = ['weather',
                     "is_weekend",
                     "order_time_of_day"]
 
-ordinal_cat_cols = ["traffic"]
+ordinal_cat_cols = ["traffic", "distance_type"]
 
 target_col = "time_taken"
 
 # generate order for ordinal encoding
 traffic_order = ["low","medium","high","jam"]
+distance_type_order = ["short","medium","long","very_long"]
 
 # create logger
 logger = logging.getLogger("data_preprocessing")
@@ -126,7 +127,7 @@ if __name__ == "__main__":
             ("nominal_encode", OneHotEncoder(drop="first",
                                             handle_unknown="ignore",
                                             sparse_output=False), nominal_cat_cols),
-            ("ordinal_encode", OrdinalEncoder(categories=[traffic_order],
+            ("ordinal_encode", OrdinalEncoder(categories=[traffic_order, distance_type_order],
                                             encoded_missing_value=-999,
                                             handle_unknown="use_encoded_value",
                                             unknown_value=-1), ordinal_cat_cols)],
