@@ -122,7 +122,8 @@ if __name__ == "__main__":
     model = TransformedTargetRegressor(regressor=stacking_reg,
                                        transformer=power_transform)
     logger.info("Models wrapped inside wrapper")
-     # fit the model on training data
+    
+    # fit the model on training data
     train_model(model,X_train,y_train)
     logger.info("Model training completed")
     
@@ -154,4 +155,3 @@ if __name__ == "__main__":
     save_transformer(transformer, transformer_save_dir, transformer_filename)
     logger.info("Transformer saved to location")
 
-    
