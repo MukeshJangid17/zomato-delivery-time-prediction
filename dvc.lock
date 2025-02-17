@@ -16,3 +16,27 @@ stages:
       hash: md5
       md5: 2a39aa81184c9372b1ab9d3ca54610b2
       size: 4457014
+  data_preparation:
+    cmd: python src/data/data_preparation.py
+    deps:
+    - path: data/cleaned/zomato_cleaned.csv
+      hash: md5
+      md5: 2a39aa81184c9372b1ab9d3ca54610b2
+      size: 4457014
+    - path: src/data/data_preparation.py
+      hash: md5
+      md5: d4bbc7b8c9bc4eb3d70220cb5bca9989
+      size: 3018
+    params:
+      params.yaml:
+        Data_Preparation.random_state: 42
+        Data_Preparation.test_size: 0.2
+    outs:
+    - path: data/interim/test.csv
+      hash: md5
+      md5: 43642a7807aa0da5e9cd13a82aa0df70
+      size: 891451
+    - path: data/interim/train.csv
+      hash: md5
+      md5: 90e506f231adb5ec2e5a43a4be13bf1d
+      size: 3562602
