@@ -1,0 +1,12 @@
+[core]
+    remote = gdrive_remote
+['remote "myremote"']
+    url = \
+['remote "remote"']
+    url = gdrive://13MExQqx2dyRMltkRYT6Z_Evwgw6kH-u7
+['remote "storage"']
+    url = gdrive://13MExQqx2dyRMltkRYT6Z_Evwgw6kH-u7
+['remote "gdrive_remote"']
+    url = gdrive://13MExQqx2dyRMltkRYT6Z_Evwgw6kH-u7
+    gdrive_use_service_account = true
+    gdrive_service_account_json_file_path = F:\projects\zomato-delivery-time-prediction\src\dvc-storage.json
