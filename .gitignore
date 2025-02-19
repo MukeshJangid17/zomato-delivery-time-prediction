@@ -89,5 +89,4 @@ target/
 /run_information.json
 
 # key for dvc to connect to remote storage
-#.config/dvc-storage.json
 config/dvc-storage.json
